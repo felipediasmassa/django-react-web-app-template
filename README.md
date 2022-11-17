@@ -1,6 +1,6 @@
-# my-first-todo-app
+# django-react-web-app-template
 
-My first web app, with basic To-Dos implementation
+Template for web app, with basic To-Dos implementation
 
 Back-End: Django (Python framework)
 
