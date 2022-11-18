@@ -1,8 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
 
+import HomePage from "./HomePage";
+
 export default function App(props) {
-  return <h1>Welcome to my Template App</h1>;
+  return <HomePage />;
 }
 
 const appDiv = document.getElementById("app");

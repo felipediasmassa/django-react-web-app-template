@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "api.apps.ApiConfig",
-    "rest_framework",
-    "frontend.apps.FrontendConfig",
+    "api.apps.ApiConfig",  # adding app "api" to project
+    "rest_framework",  # adding rest_framework to project
+    "frontend.apps.FrontendConfig",  # adding app "frontend" to project
 ]
 
 MIDDLEWARE = [

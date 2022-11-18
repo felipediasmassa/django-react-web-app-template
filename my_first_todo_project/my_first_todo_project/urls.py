@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/", include("api.urls")),
-    path("", include("frontend.urls")),
+    path("admin/", admin.site.urls),  # admin screen when path is /admin
+    path("api/", include("api.urls")),  # route to api app when path is /api
+    path("", include("frontend.urls")),  # route to frontend app when path is root
 ]
