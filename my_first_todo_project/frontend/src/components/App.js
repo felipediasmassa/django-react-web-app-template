@@ -1,10 +1,29 @@
 import React from "react";
 import { render } from "react-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
-import HomePage from "./HomePage";
+import "./App.css";
+
+import ToDoBoardPage from "./ToDoBoardPage/ToDoBoardPage";
+import AddToDoPage from "./AddToDoPage/AddToDoPage";
+import EditToDoPage from "./EditToDoPage/EditToDoPage";
 
 export default function App(props) {
-  return <HomePage />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="" element={<ToDoBoardPage />}></Route>
+        <Route path="add/" element={<AddToDoPage />}></Route>
+        <Route path="edit/" element={<EditToDoPage />}></Route>
+      </Routes>
+    </Router>
+  );
 }
 
 const appDiv = document.getElementById("app");

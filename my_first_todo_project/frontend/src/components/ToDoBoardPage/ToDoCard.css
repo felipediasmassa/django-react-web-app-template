@@ -1,0 +1,11 @@
+.to-do-button {
+  background-color: #512d6d;
+  color: white;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.to-do-button:hover {
+  background-color: white;
+  color: #512d6d;
+}
