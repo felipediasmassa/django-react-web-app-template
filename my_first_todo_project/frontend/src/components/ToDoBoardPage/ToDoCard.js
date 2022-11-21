@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./ToDoCard.css";
 
 export default function ToDoCard(props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const clickFunc = (toDo) => {
+    console.log("Clicked " + { toDo });
+    setIsExpanded((prevIsExpanded) => !prevIsExpanded);
+    console.log(isExpanded);
+  };
+
   return (
-    <div>
-      <button className="to-do-button" onClick={console.log("Clicked!")}>
-        First To Do
-        <p class="to-do-label">{props.toDo}</p>
-        <p class="to-do-description">{props.description}</p>
-        <p class="to-do-created-at">{props.createdAt}</p>
-        <p class="to-do-due-date">{props.dueDate}</p>
-        <p class="to-do-status">{props.toDoStatus}</p>
-      </button>
-    </div>
+    <button className="to-do-button" onClick={() => clickFunc(props.toDo)}>
+      <p className="to-do-first-row">{props.toDo}</p>
+      <p className="to-do-first-row">Created At: {props.createdAt}</p>
+      <p className="to-do-first-row">Due Date: {props.dueDate}</p>
+      <p className="to-do-first-row">Status: {props.toDoStatus}</p>
+      {isExpanded ? (
+        <p className="to-do-second-row">{props.description}</p>
+      ) : (
+        false
+      )}
+    </button>
   );
 }

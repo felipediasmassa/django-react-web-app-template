@@ -1,11 +1,27 @@
 .to-do-button {
-  background-color: #512d6d;
+  background-color: rgba(81, 45, 109, 1);
   color: white;
-  border-radius: 10%;
+  border-radius: 20px;
+  border-color: rgba(81, 45, 109, 1);
   cursor: pointer;
+  display: inline;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  width: 1200px;
 }
 
 .to-do-button:hover {
-  background-color: white;
-  color: #512d6d;
+  background-color: rgba(81, 45, 109, 0.5);
+}
+
+.to-do-first-row {
+  display: inline;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.to-do-second-row {
+  margin: 0px;
+  margin-top: 10px;
 }
