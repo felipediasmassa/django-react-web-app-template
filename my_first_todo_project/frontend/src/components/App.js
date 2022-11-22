@@ -20,7 +20,7 @@ export default function App(props) {
       <Routes>
         <Route path="" element={<ToDoBoardPage />}></Route>
         <Route path="add/" element={<AddToDoPage />}></Route>
-        <Route path="edit/" element={<EditToDoPage />}></Route>
+        <Route path="edit/:toDoId" element={<EditToDoPage />}></Route>
       </Routes>
     </Router>
   );

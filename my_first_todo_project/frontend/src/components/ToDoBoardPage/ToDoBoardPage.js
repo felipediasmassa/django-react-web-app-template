@@ -1,34 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./ToDoBoardPage.css";
 
 import ToDoCard from "./ToDoCard";
 
 export default function ToDoBoardPage(props) {
+  const [toDos, setToDos] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/api/to-dos")
+      .then((response) => response.json())
+      .then((data) => {
+        setToDos(data);
+        console.log(data);
+      });
+  }, []);
+
+  const navigateAddItemHandler = () => {
+    navigate("/add");
+  };
+
   return (
     <div>
+      <nav>
+        <h1>My To Do App</h1>
+        <button onClick={navigateAddItemHandler}>Add To Do</button>
+      </nav>
       <p>This is ToDoBoardPage</p>
-      <ToDoCard
-        toDo="First To Do Label"
-        description="First To Do Description"
-        createdAt="2022-11-19"
-        dueDate="2022-12-01"
-        toDoStatus="True"
-      />
-      <ToDoCard
-        toDo="Second To Do Label"
-        description="Second To Do Description"
-        createdAt="2022-11-26"
-        dueDate="2022-12-08"
-        toDoStatus="False"
-      />
-      <ToDoCard
-        toDo="Third To Do Label"
-        description="Third To Do Description"
-        createdAt="2022-11-30"
-        dueDate="2022-12-23"
-        toDoStatus="False"
-      />
+      {toDos.map((t) => (
+        <ToDoCard
+          id={t.id}
+          toDo={t.to_do}
+          description={t.description}
+          createdAt={t.created_at.toString()}
+          dueDate={t.due_date.toString()}
+          toDoStatus={t.todo_status.toString()}
+        />
+      ))}
     </div>
   );
 }

@@ -1,1 +1,16 @@
+nav {
+  background-color: #512d6d;
+  color: white;
+  vertical-align: middle;
+}
 
+nav h1 {
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  margin: 0;
+}
+
+nav button {
+  background-color: #512d6d;
+}
