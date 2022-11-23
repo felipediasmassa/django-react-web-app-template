@@ -8,20 +8,72 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 5px;
-  width: 1200px;
+  width: 80%;
 }
 
 .to-do-button:hover {
   background-color: rgba(81, 45, 109, 0.5);
 }
 
-.to-do-first-row {
+.first-row {
   display: inline;
-  margin-left: 50px;
-  margin-right: 50px;
+  font-family: "Open Sans";
 }
 
-.to-do-second-row {
-  margin: 0px;
+.second-row {
+  display: inline;
   margin-top: 10px;
+  font-family: "Open Sans";
+}
+
+.first-row div p {
+  margin: 0px;
+}
+
+.second-row div p {
+  margin: 0px;
+}
+
+.to-do-label {
+  width: 40%;
+  display: inline-block;
+}
+
+.to-do-created-at {
+  width: 20%;
+  display: inline-block;
+}
+
+.to-do-due-date {
+  width: 20%;
+  display: inline-block;
+}
+
+.to-do-status {
+  width: 20%;
+  display: inline-block;
+}
+
+.to-do-description {
+  width: 80%;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.to-do-edit {
+  width: 20%;
+  display: inline-block;
+}
+
+.to-do-edit button {
+  background-color: rgba(81, 45, 109, 1);
+  color: white;
+  border-color: white;
+  border-radius: 10px;
+  font-family: "Open Sans";
+}
+
+.to-do-edit button:hover {
+  background-color: rgba(81, 45, 109, 0.5);
+  cursor: pointer;
 }

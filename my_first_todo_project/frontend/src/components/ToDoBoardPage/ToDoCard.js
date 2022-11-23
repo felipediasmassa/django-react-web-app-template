@@ -9,7 +9,6 @@ import AccessAlarmsIcon from "@mui/icons-material/AccessAlarms";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import MessageIcon from "@mui/icons-material/Message";
-import EditIcon from "@mui/icons-material/Edit";
 
 export default function ToDoCard(props) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -25,26 +24,34 @@ export default function ToDoCard(props) {
 
   return (
     <button className="to-do-button" onClick={expandToDoHandler}>
-      <AssignmentIcon />
-      <p className="to-do-first-row">{props.toDo}</p>
-      <CalendarTodayIcon />
-      <p className="to-do-first-row">Created At: {props.createdAt}</p>
-      <AccessAlarmsIcon />
-      <p className="to-do-first-row">Due Date: {props.dueDate}</p>
-      {props.toDoStatus ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
-      <p className="to-do-first-row">Status: {props.toDoStatus}</p>
+      <div className="first-row">
+        <div className="to-do-label">
+          <AssignmentIcon />
+          <p>{props.toDo}</p>
+        </div>
+        <div className="to-do-created-at">
+          <CalendarTodayIcon />
+          <p>Created At: {props.createdAt}</p>
+        </div>
+        <div className="to-do-due-date">
+          <AccessAlarmsIcon />
+          <p>Due Date: {props.dueDate}</p>
+        </div>
+        <div className="to-do-status">
+          {!props.toDoStatus ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
+          <p>Status: {props.toDoStatus}</p>
+        </div>
+      </div>
       {isExpanded ? (
-        <>
-          <MessageIcon className="to-do-second-row" />
-          <p className="to-do-second-row">{props.description}</p>
-          <EditIcon />
-          <button
-            className="to-do-second-row"
-            onClick={navigateEditItemHandler}
-          >
-            Edit To Do
-          </button>
-        </>
+        <div className="second-row">
+          <div className="to-do-description">
+            <MessageIcon />
+            <p>{props.description}</p>
+          </div>
+          <div className="to-do-edit">
+            <button onClick={navigateEditItemHandler}>Edit To Do</button>
+          </div>
+        </div>
       ) : (
         false
       )}
