@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom/client";
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,5 +26,5 @@ export default function App(props) {
   );
 }
 
-const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+const appDiv = ReactDOM.createRoot(document.getElementById("app"));
+appDiv.render(<App />);

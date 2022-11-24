@@ -41,12 +41,11 @@ class CreateToDoView(APIView):
                 return Response(
                     ToDoSerializer(todo).data, status=status.HTTP_201_CREATED
                 )
-            else:
-                # If due date is not greater than today, return error:
-                return Response(
-                    {"Bad Request": "Due date not valid"},
-                    status=status.HTTP_400_BAD_REQUEST,
-                )
+            # If due date is not greater than today, return error:
+            return Response(
+                {"Bad Request": "Due date not valid"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
         # If data is not valid (in check through serializer), return error:
         return Response(

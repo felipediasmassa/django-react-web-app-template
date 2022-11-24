@@ -23,7 +23,7 @@ export default function ToDoBoardPage(props) {
   };
 
   return (
-    <div>
+    <div className="content">
       <nav>
         <h1>My To Do App</h1>
         <button onClick={navigateAddItemHandler}>Add To Do</button>
@@ -31,6 +31,7 @@ export default function ToDoBoardPage(props) {
       <p>This is ToDoBoardPage</p>
       {toDos.map((t) => (
         <ToDoCard
+          key={t.id}
           id={t.id}
           toDo={t.to_do}
           description={t.description}

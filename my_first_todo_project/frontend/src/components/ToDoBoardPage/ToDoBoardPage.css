@@ -5,12 +5,25 @@ nav {
 }
 
 nav h1 {
+  display: inline;
   text-align: center;
   line-height: 50px;
   font-size: 30px;
   margin: 0;
+  width: 50%;
 }
 
 nav button {
-  background-color: #512d6d;
+  display: inline;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(81, 45, 109, 1);
+  border-color: white;
+  border-radius: 10px;
+  font-family: "Open Sans";
+}
+
+nav button:hover {
+  background-color: rgba(81, 45, 109, 0.5);
+  color: white;
+  cursor: pointer;
 }

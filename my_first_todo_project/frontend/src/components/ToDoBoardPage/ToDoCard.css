@@ -9,6 +9,7 @@
   padding-bottom: 10px;
   margin: 5px;
   width: 80%;
+  left: 50%;
 }
 
 .to-do-button:hover {
@@ -66,14 +67,15 @@
 }
 
 .to-do-edit button {
-  background-color: rgba(81, 45, 109, 1);
-  color: white;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(81, 45, 109, 1);
   border-color: white;
   border-radius: 10px;
   font-family: "Open Sans";
 }
 
 .to-do-edit button:hover {
-  background-color: rgba(81, 45, 109, 0.5);
+  background-color: rgba(81, 45, 109, 1);
   cursor: pointer;
+  color: white;
 }
